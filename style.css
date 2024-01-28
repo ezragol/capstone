@@ -5,6 +5,7 @@
 
 body {
     margin: 0;
+    overflow-x: hidden;
 }
 
 #root {
@@ -63,7 +64,6 @@ main {
 
 footer, nav, main {
     width: 100vw;
-    overflow-x: hidden;
     display: flex;
     justify-content: center;
 }
