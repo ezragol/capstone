@@ -79,7 +79,17 @@
             </div>
         </footer>
     </div>
-    <script src="/main.js"></script>
+    <script>
+        const links = document.querySelectorAll("a");
+        const { host } = location;
+        if (host == "ezragol.github.io") {
+            for (const link of links) {
+                const href = link.getAttribute("href");
+                if (href)
+                    link.setAttribute("href", "/capstone" + href);
+            }
+        }
+    </script>
 </body>
 
 </html>
