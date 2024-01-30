@@ -72,6 +72,7 @@ footer, nav, main {
 a {
     color: black;
     text-decoration: none;
+    overflow: hidden;
 }
 
 ul {
@@ -89,4 +90,17 @@ li {
 
 #main > ul > li {
     margin: 20px 0;
+}
+
+a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: black;
+    transition: width 0.3s cubic-bezier(0.55,-0.02, 0.73, 0.5);
+}
+
+a:hover::after {
+    width: 100%;
 }
