@@ -1,6 +1,8 @@
 :root {
     --footer-bg: #efefef;
     --navbar-bg: #d9ebf8;
+    --recording-bg: #f6f6f6;
+    --recording-hover: #717171;
 }
 
 body {
@@ -103,4 +105,51 @@ a::after {
 
 a:hover::after {
     width: 100%;
+}
+
+#shelf {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.recording {
+    max-width: 80vw;
+    padding: 5px;
+    background-color: var(--recording-bg);
+    transition: transform 0.25s, box-shadow 0.25s;
+    box-shadow: 0 0 0 0 var(--recording-hover);
+    transform: translate(0, 0);
+    border-radius: 5px;
+}
+
+.recording > h3 {
+    padding-left: 15px;
+}
+
+.recording::after {
+    content: '';
+    display: block;
+    position: relative;
+    top: 30px;
+    width: 0;
+    left: -20px;
+    height: 10px;
+    background-color: transparent;
+}
+
+.recording:hover::after, .recording::after:hover {
+    pointer-events: none;
+}
+
+.recording:hover::after {
+    width: calc(100% + 40px);
+}
+
+.recording:hover {
+    box-shadow: 0 0 5px 0 var(--recording-hover);
+    transform: translate(0, -5px);
+    cursor: pointer;
 }
